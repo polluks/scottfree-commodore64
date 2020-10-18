@@ -43,15 +43,15 @@ You will need either a Commodore 64 emulator such as [Vice](https://vice-emu.sou
 
 * Download either the scottfree64.d64 and/or the scottfree64.d81 file from the dist directory.
 * Open Vice, set the drive type to the appropriate type (1541/1581), and attach to the d64 or d81 respectively.
-* Use `LOAD "*",8,1` or `LOAD "README64",8,1` and the `RUN`. This will load a BASIC stub readme I've created to help you understand the loading process, and how to pass arguments to the program.  
-* The readme will explain that you need to first `LOAD "SCOTTFREE64",8,1`, THEN you must pass it any options you want to use, the game's file name, and optionally a save game file. 
+* Use `LOAD "*",8` or `LOAD "README64",8` and the `RUN`. This will load a BASIC stub readme I've created to help you understand the loading process, and how to pass arguments to the program.  
+* The readme will explain that you need to first `LOAD "SCOTTFREE64",8`, THEN you must pass it any options you want to use, the game's file name, and optionally a save game file. 
 * **Note:** ScottFree64 now supports a binary formatted DAT file called **BDAT**. These BDAT files are optimized to **load much more quickly** with ScottFree64 (starting with version 0.9.3). To use just use the bdat file instead of the dat file. (**ghostking.bdat** instead of ghostking.dat)  
 
 Example:  
 
-	LOAD "SCOTTFREE64",8,1  
+	LOAD "SCOTTFREE64",8
 	LOADING  
-	READY  
+	READY.
 	RUN:REM -D GHOSTKING.DAT YORICK
 
 In order to pass command line arguments to the program, binaries made in cc65 need to be run with the special `:REM` argument.  
@@ -84,7 +84,7 @@ While in a game there are some other options available:
 
 ## Commodore 128 version!
 Follow the same steps above for the Commodore 64, except download the d64/d81 file called scottfree128.d64 or scottfree128.d81. 
-Also, you will need to instead load the README128 file: `LOAD "README128",8,1` 
+Also, you will need to instead load the README128 file: `DLOAD "README128"`
 To run in **80 column mode**, switch to 80 columns and load and run as described above while in 80 column mode. 
 
 To build the Commodore 128 version use: `SYS=c128 make clean all`
